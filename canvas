@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>canvas 标签使用</title>
+
+</head>
+<body>
+	<canvas width= "500" height="800" style="background:yellow" id="canvas">您的浏览器不支持canvas标签</canvas>
+
+	<script>
+		//获取画布
+		var canvas= document.getElementById('canvas');
+		//设置绘图环境
+		var ext=canvas.getContext('2d');
+		//画一条直线段
+			//开始新路径
+			ext.beginPath();
+			//设定画笔的宽度
+			ext.lineWidth= 10;
+			//设置笔触颜色渐变，模式
+			ext.strokeStyle="#00ff00";
+			//设置笔触起始位置
+			ext.moveTo(20,20);
+			//设置移动方法
+			ext.lineTo(100,20);
+			//画出的方法
+			ext.stroke();
+			//封闭路径
+			ext.closePath();
+		//画一个空心圆形		
+			ext.beginPath();
+			ext.lineWidth= 3;
+			ext.strokeStyle="#fff";
+			//画圆方法
+			ext.arc(200,200,50,0,360,false);
+			ext.stroke();
+			ext.closePath();
+		//画一个实心圆
+			ext.beginPath();
+			//设置填充颜色
+			ext.fillStyle="rgb(255,0,0)";
+			ext.arc(200,100,50,0,360,false);
+			//填充方法
+			ext.fill();
+			ext.stroke();//边框
+			ext.closePath();
+		//画一个矩形
+			ext.beginPath();
+			ext.rect(300,20,100,100);
+			ext.stroke();
+			ext.closePath();
+			//其他方法
+			ext.beginPath();
+			ext.strokeRect(300,150,100,100);
+			ext.closePath();
+			//实心矩形
+			ext.beginPath();
+			ext.rect(300,270,100,100);
+			ext.fill();
+			ext.closePath();
+			//其他方法
+			ext.fillRect(300,380,100,100);
+		//设置文字
+			ext.font = "30px 黑体";
+			ext.fillText("啦啦啦啦啦",20,280);
+			ext.strokeStyle="#000";
+			ext.lineWidth=1;
+			//空心字
+			ext.strokeText("啦啦啦啦啦",20,320);
+		//画入一张图片
+			var img = new Image();
+			img.src="lv.jpg";
+			ext.drawImage(img,20,370,419,600);
+		//画一个三角形
+			ext.beginPath();
+			ext.moveTo(300,500);
+			ext.lineTo(300,600);
+			ext.lineTo(400,550);
+			ext.closePath();
+			ext.stroke();
+		//画一个空心三角形
+			ext.beginPath();
+			ext.moveTo(300,600);
+			ext.lineTo(300,700);
+			ext.lineTo(400,650);
+			ext.closePath();
+			ext.fill();
+		//旋转图片
+			//设置旋转环境
+			ext.save();
+			//重置（0,0）位置
+			ext.translate(20,20);		
+			//设置旋转角度,参数是弧度
+			ext.rotate(-30*Math.PI/180);
+				//旋转一个线段
+				ext.lineWidth= 10;
+				ext.strokeStyle="#ff00ff";
+			    ext.beginPath();
+			    ext.moveTo(0,0);
+			    ext.lineTo(0,80);	
+			    ext.stroke();	    
+			    ext.closePath();
+			//将旋转之后的元素放回原画布
+			ext.restore();
+	</script>
+</body>
+</html>
