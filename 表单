@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>表单</title>
+	
+</head>
+<body>
+	<form action=""  id="rigister"></form>
+	姓名：<input type="text" name="user" value="" form="rigister" />
+	密码：<input type="password" name="pwd" value="" form="rigister"/>
+	<select name="year" form="rigister">
+		<option value="1970">1970</option>
+		<option value="1980">1980</option>
+		<option value="1990">1990</option>
+	</select>	
+	<input type="submit" value="注册" form="rigister"/>
+	<hr />
+	<h1>form 新增标签</h1>
+	默认值：<input type="text" name="moren" value="" pattern="" form="rigister" placeholder="这里是默认值" /><br/>
+	邮箱：<input type="email" name="youxaing" form="rigister" required="required" /><br/>
+	URL：<input type="url" name="url" form="rigister"/><br/>
+	DATA：<input type="data" name="riqi" form="rigister"/><br/>
+	TIME：<input type="time" name="shijian" form="rigister"/><br/>
+	MONTH：<input type="month" name="yue" form="rigister"/><br/>
+	WEEK：<input type="week" name="zhou" form="rigister"/><br/>
+	数字：<input type="number" name="shuzi" form="rigister" autofocus="autofocus" /><br/>
+	滑动条：<input type="range" name="huadong" form="rigister" max="5"/><br/>
+	搜索：<input type="search" name="sousuo" form="rigister" results="n" /><br/>
+	颜色：<input type="color" name="yanse" form="rigister" /><br/>
+	<hr />
+	自动填充表单<br />
+	<input type="search" name="auto" list="la">
+	<datalist id="la">
+		<option value="啦"></option>
+		<option value="啦啦啦"></option>
+		<option value="啦啦啦啦"></option>
+		<option value="啦啦啦啦啦"></option>
+	</datalist>
+	输出表单<br />
+	<form action="" method="post" oninput="result.value=parseInt(no1.value)*paeseInt(no.value)">
+		<input type="number" name="no1" value="" />
+		<input type="number" name="no2" value="" />
+		<output name="result"></output>
+	</form>
+
+</body>
+</html>
